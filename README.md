@@ -1,56 +1,76 @@
-# Retail Sales Analytics (SQL)
+# Retail Sales Analytics using SQL
 
-## Business Problem
-Retail organizations need a clear understanding of sales performance across markets, customers, and products.
-This project focuses on analyzing retail sales data to calculate net sales accurately and generate business-ready insights such as top-performing markets, customer contribution, and product rankings.
+## Project Overview
+This project focuses on analyzing retail sales data using SQL to derive
+business insights such as top-performing markets, products, customers,
+and overall market share.
 
-The analysis is designed to support decision-making in areas like pricing, discount strategy, and product performance evaluation.
-
----
-
-## Dataset Overview
-The dataset follows a star-schema design and includes:
-- Monthly sales transactions
-- Product master data
-- Customer and market information
-- Gross pricing
-- Pre-invoice and post-invoice discount details
-
-The analysis is performed for a specific financial year and can be parameterized for reuse.
+The project follows a structured, production-style SQL workflow with
+clear separation of business logic, analysis queries, and documentation.
 
 ---
 
-## Key Metrics Defined
-- **Gross Sales**: Gross price × sold quantity  
-- **Pre-Invoice Discount**: Discount applied before invoicing  
-- **Post-Invoice Discount**: Discounts and deductions applied after invoicing  
-- **Net Sales**: Final revenue after all discounts  
-- **Market Share**: Contribution percentage of a customer or market to total net sales  
-
-Detailed metric definitions are available in the `docs/` folder.
+## Business Objectives
+- Calculate Gross and Net Sales accurately
+- Identify top markets, customers, and products
+- Analyze market contribution and performance
+- Use SQL best practices such as views, CTEs, and window functions
 
 ---
 
-## Analysis Performed
-- Creation of a reusable net sales view
-- Top-performing markets, customers, and products analysis
-- Global and region-wise market share analysis
-- Product ranking within divisions using window functions
-- Parameterized stored procedures for reusable analysis
+## Dataset Description
+The dataset contains retail sales transaction data including:
+- Sales quantity
+- Product details
+- Market and customer information
+- Pricing and discount data
+
+(Data modeled using fact and dimension tables)
 
 ---
 
 ## Project Structure
-docs/ -> Business logic and metric explanations
-sql/ -> SQL scripts used for analysis
-sample_output/ -> Sample outputs and result snapshots
-README.md -> Project overview and documentation
+sql_scripts/ → Core SQL queries and views
+docs/ → Business logic and metric explanations
+sample_outputs/ → Query results and visual outputs
+schema/ → Database schema reference
 
 ---
 
-## Tools Used
-- MySQL
-- SQL (CTEs, Window Functions, Views, Stored Procedures)
-- GitHub
+## Key SQL Concepts Used
+- Joins (INNER, LEFT)
+- Aggregations
+- Views
+- Window Functions (RANK, DENSE_RANK)
+- Stored Procedures
+- Date and fiscal year filtering
 
+---
 
+## Key Analyses Performed
+- Net Sales Calculation
+- Top 5 Markets by Net Sales
+- Top Products and Customers
+- Market Share Analysis
+- Ranking Analysis using Window Functions
+
+---
+
+## How to Use
+
+1. Review business logic and metric definitions in  
+   [`business_logic_docs/`](business_logic_docs/)
+   - [`metric_definitions.md`](business_logic_docs/metric_definitions.md)
+   - [`net_sales_formula.md`](business_logic_docs/net_sales_formula.md)
+
+2. Execute SQL scripts sequentially from `01` to `06` located in  
+   [`sql_scripts/`](sql_scripts/)
+
+3. Refer to expected results in  
+   [`sample_outputs/`](sample_outputs/)
+
+---
+
+## Author
+**Shourya Sarraf**  
+Aspiring Data Analyst | SQL | Excel | Power BI
